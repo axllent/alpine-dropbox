@@ -1,4 +1,6 @@
-# README
+# Alpine Dropbox
+
+A minimal docker containder that runs a headless Dropbox client.
 
 ```shell
 docker run -d \
