@@ -17,7 +17,7 @@ WORKDIR /dbox
 
 EXPOSE 17500
 
-ENTRYPOINT ["/sbin/init"]
+ENTRYPOINT ["/init"]
 
 VOLUME ["/dbox/Dropbox", "/dbox/.dropbox"]
 
