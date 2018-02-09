@@ -1,8 +1,13 @@
 #!/bin/sh
+STORED="";
 while true
 do
     if [ -f '/dbox/.dropbox-dist/VERSION' ]; then
-        dropbox-cli status
+        CUR="$(dropbox-cli status)";
+        if [ "$STORED" != "$CUR"]; then
+            STORED="$CUR";
+            echo $STORED
+        fi
     fi
-    sleep 10
+    sleep 1
 done
