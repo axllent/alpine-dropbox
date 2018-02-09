@@ -39,3 +39,11 @@ docker run -d \
 -e GID=1001 \
 axllent/alpine-dropbox
 ```
+
+## Interacting with dropbox-cli
+
+Dropbox commands should be run as the `dbox` user:
+
+```shell
+docker exec -it -u dbox dropbox dropbox-cli help
+```
