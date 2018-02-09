@@ -19,6 +19,10 @@ The first time the container is run it downloads the latest version of the Dropb
 
 The first time you run you will need to authorise the Dropbox client.
 
+## Authorise the client
+
+The first time you run you will need to authorise the Dropbox client.
+
 After starting your container, run `docker logs dropbox -f` and wait until you see something like:
 
 ```
