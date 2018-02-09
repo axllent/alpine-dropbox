@@ -5,8 +5,6 @@
 UID=${UID:-1000}
 GID=${GID:-1000}
 
-echo "$UID / $GID"
-
 addgroup -g $GID dbox && \
         adduser -S -D -H -h /dbox -s /bin/sh -u $UID -G dbox dbox
 
