@@ -1,3 +1,4 @@
+#!/bin/sh
 while true
 do
     if [ -f '/dbox/.dropbox-dist/VERSION' ]; then

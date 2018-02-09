@@ -12,8 +12,8 @@ ADD init /init
 RUN chmod +x /init
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
-ADD dstatus.sh /dstatus.sh
-RUN chmod +x /dstatus.sh
+ADD dropbox-status.sh /usr/local/bin/dropbox-status
+RUN chmod +x /usr/local/bin/dropbox-status
 
 WORKDIR /dbox
 
