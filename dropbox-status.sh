@@ -5,7 +5,7 @@ do
     if [ -f '/dbox/.dropbox-dist/VERSION' ]; then
         CUR="$(dropbox-cli status)";
         if [ "$STORED" != "$CUR" ]; then
-            STORED="$CUR";
+            STORED="$CUR"
             echo "${STORED}"
         fi
     fi
