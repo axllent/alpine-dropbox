@@ -1,6 +1,7 @@
 # Alpine Dropbox
 
-A minimal Alpine ([glibc](https://hub.docker.com/r/frolvlad/alpine-glibc/)) docker container that runs a headless Dropbox client.
+A minimal Alpine ([glibc](https://hub.docker.com/r/frolvlad/alpine-glibc/))
+docker container that runs a headless Dropbox client.
 
 ## Quickstart
 
@@ -13,21 +14,29 @@ docker run -d \
 axllent/alpine-dropbox
 ```
 
-## Configuration
-The first time you run you will need to authorise your client.
+The first time the container is run it downloads the latest Dropbox client.
+There is no Dropbox client updater script, so if you need to update Dropbox
+then simply remove the container and add it again.
 
-After starting your container, run `docker logs dropbox -f` and wait until you see something like:
+## Authorise the client
+
+The first time you run you will need to authorise the Dropbox client.
+
+After starting your container, run `docker logs dropbox -f` and wait until you see
+something like:
 
 ```
 This computer isn't linked to any Dropbox account...
 Please visit https://www.dropbox.com/cli_link_nonce?nonce=48fb804e2fa486b152db480a36ef5923 to link this device.
 ```
+
 Open that link in your browser and authorise the client to access your dropbox.
 
 
-## Custom user/group id
+## Running as custom user/group
 
-The image will by default run with user/group id 1000. You can change this to suit your current user by adding the `UID` & `GID` environment variables.
+The image will by default run with user/group id of 1000. You can change this to suit
+your current user by adding the `UID` & `GID` environment variables.
 
 ```shell
 docker run -d \
@@ -46,4 +55,15 @@ Dropbox commands should be run as the `dbox` user:
 
 ```shell
 docker exec -it -u dbox dropbox dropbox-cli help
+```
+
+Any custom configuration that is supported by the dropbox-cli can be modified this way.
+
+## Dropbox status
+
+The current Dropbox status can be seen in the docker log. It refreshes every second
+and only outputs data when the data changes as not to spam the log with irrelevant info.
+
+```shell
+docker logs dropbox -f
 ```
