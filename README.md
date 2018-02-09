@@ -1,6 +1,7 @@
 # Alpine Dropbox
 
-A minimal Alpine ([glibc](https://hub.docker.com/r/frolvlad/alpine-glibc/)) docker container that runs a headless Dropbox client.
+A minimal Alpine ([glibc](https://hub.docker.com/r/frolvlad/alpine-glibc/))
+docker container that runs a headless Dropbox client.
 
 ## Quickstart
 
@@ -19,7 +20,12 @@ The first time the container is run it downloads the latest version of the Dropb
 
 The first time you run you will need to authorise the Dropbox client.
 
-After starting your container, run `docker logs dropbox -f` and wait until you see something like:
+## Authorise the client
+
+The first time you run you will need to authorise the Dropbox client.
+
+After starting your container, run `docker logs dropbox -f` and wait until you see
+something like:
 
 ```
 This computer isn't linked to any Dropbox account...
