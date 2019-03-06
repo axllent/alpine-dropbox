@@ -4,7 +4,7 @@ MAINTAINER Ralph Slooten <axllent@gmail.com>
 
 USER root
 
-RUN apk add --no-cache ca-certificates python \
+RUN apk add --no-cache ca-certificates python3 \
      && wget https://www.dropbox.com/download?dl=packages/dropbox.py -O /usr/local/bin/dropbox-cli \
      && chmod +x /usr/local/bin/dropbox-cli
 
