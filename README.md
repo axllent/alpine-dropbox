@@ -1,5 +1,14 @@
 # Alpine Dropbox
 
+## This project has been discontinued!
+
+Dropbox requires glibc, and Alpine Linux does not support glibc without some hackery, resulting in a much larger docker image than was intended. It also does not run reliably.
+
+My suggestion would be to switch to other docker images such as [bnutz/min-ubuntu-dropbox](https://github.com/bnutz/min-ubuntu-dropbox) (based off this project) which uses Ubuntu instead.
+
+
+## Intro
+
 A minimal Alpine ([glibc](https://hub.docker.com/r/frolvlad/alpine-glibc/)) docker container that runs a headless Dropbox client.
 
 ## Quickstart
